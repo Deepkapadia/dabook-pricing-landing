@@ -1,0 +1,1046 @@
+@font-face {
+  font-family: 'Satoshi-Regular';
+  src: url('./assets/fonts/Satoshi-Regular.ttf');
+  font-weight: 400;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Medium';
+  src: url('./assets/fonts/Satoshi-Medium.ttf');
+  font-weight: 500;
+  font-display: swap;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Satoshi-Bold';
+  src: url('./assets/fonts/Satoshi-Bold.ttf');
+  font-weight: 700;
+  font-display: swap;
+  font-style: normal;
+}
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+input,
+button,
+body {
+  font-family: Satoshi-Medium;
+  font-size: var(--normal-font-size);
+}
+
+body {
+  background-color: #000;
+  color: #ECECEC;
+  transition: background .4s;
+  /* for dark mode animation */
+}
+
+input,
+button {
+  border: none;
+  outline: none;
+}
+
+h1,
+h2,
+h3,
+h4 {
+  color: var(--title-color);
+  font-weight: 700;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/*=============== REUSABLE CSS CLASSES ===============*/
+.grid {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.flex {
+  display: flex;
+  gap: 1.5rem;
+}
+
+.section {
+  padding-block: 5rem;
+}
+
+.main {
+  overflow: hidden;
+  /* For animation ScrollReveal */
+}
+
+.container {
+  max-width: 1100px;
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
+.checkout-section {
+  margin-top: 2.88rem;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 3.44rem;
+}
+
+.checkout-section .checkout-title h4 {
+  color: #ECECEC;
+  text-align: center;
+  font-family: Satoshi-Bold;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2.625rem;
+  /* 116.667% */
+  letter-spacing: -0.0225rem;
+  text-transform: uppercase;
+}
+
+
+.checkout-container {
+  display: grid;
+  align-items: flex-start;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1.8rem;
+}
+
+.checkout-container .gradient-mobile-texts {
+  display: none;
+}
+
+.checkout-container .mobile-book-button {
+  display: none;
+}
+
+.checkout-card {
+  transition: .3s;
+  cursor: pointer;
+}
+
+.checkout-card:hover {
+  transform: scale(1.04);
+}
+
+/* .checkout-card.unlocked START*/
+.checkout-container .checkout-card.unlocked {
+  background-color: #292929;
+  backdrop-filter: blur(22px);
+  padding: 1.25rem;
+  border-radius: 34px;
+  height: fit-content;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checkout-container .checkout-card .checkout-card-contents .card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-left: .19rem;
+  margin-right: .19rem;
+}
+
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase,
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase h3 {
+  color: #FF4444;
+  font-family: Satoshi-Bold;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.5rem;
+  letter-spacing: -0.0225rem;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price h4 {
+  color: #FF4444;
+  font-family: Satoshi-Bold;
+  font-size: 2.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.5rem;
+  letter-spacing: -0.055rem;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase p,
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price p {
+  color: #E8E8E8;
+  font-family: Satoshi-Bold;
+  font-size: 1.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 2rem;
+  letter-spacing: -0.0125rem;
+}
+
+.checkout-container .checkout-card .card-header .phase {
+  text-align: left;
+}
+
+.checkout-container .checkout-card .card-header .price {
+  text-align: right;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile,
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-image-with-mobile-info .card-image .card-locked-overlay {
+  display: none;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile,
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-image-with-mobile-info .card-image .card-locked-overlay {
+  display: none;
+}
+
+.card-phase-info {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info .phase {
+  text-align: left;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info p {
+  font-family: Satoshi-Bold;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.875rem;
+  letter-spacing: -0.01125rem;
+}
+
+
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info .phase-info {
+  text-align: right;
+}
+
+/* .checkout-card.locked START*/
+.checkout-container .checkout-card.locked {
+  background-color: #141414;
+  backdrop-filter: blur(22px);
+  padding: 1.25rem;
+  border-radius: 34px;
+  height: fit-content;
+
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-image .main-img {
+  opacity: .5;
+  border-radius: 3.5625rem;
+}
+
+.checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+  width: 23.875rem;
+  border-radius: 3.5625rem;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-image {
+  position: relative;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-image .card-locked-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase,
+.checkout-container .checkout-card.locked .checkout-card-contents .card-header .price {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase h3 {
+  font-family: Satoshi-Bold;
+  font-size: 2.25rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.5rem;
+  letter-spacing: -0.0225rem;
+
+  background: linear-gradient(180deg, #636363 23.5%, #C9C9C9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-header .price h4 {
+  font-family: Satoshi-Bold;
+  font-size: 2.75rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 3.5rem;
+  letter-spacing: -0.055rem;
+
+  background: linear-gradient(180deg, #636363 23.5%, #C9C9C9 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase p,
+.checkout-container .checkout-card.locked .checkout-card-contents .card-header .price p {
+  color: #858585;
+  font-family: Satoshi-Bold;
+  font-size: 1.25rem;
+  font-style: normal;
+  line-height: 2rem;
+  letter-spacing: -0.0125rem;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .progress-info .card-phase-info .phase {
+  text-align: left;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .progress-info .card-phase-info .phase p {
+  color: #B26767;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .progress-info .card-phase-info p {
+  color: #636363;
+  text-align: right;
+  font-family: Satoshi-Bold;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.875rem;
+  letter-spacing: -0.01125rem;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .progress-info .card-phase-info .phase-info {
+  text-align: right;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .progress-info .progress-bar {
+  opacity: 0.7;
+  /* margin-top: 1rem; */
+  background-color: #C2C2C2;
+  width: 100%;
+  border-radius: 15px;
+  height: 0.25rem;
+}
+
+.checkout-container .checkout-card.locked .checkout-card-contents .progress-info .progress {
+  display: none;
+}
+
+.checkout-container .checkout-card.locked .card-footer {
+  display: none;
+}
+
+.checkout-container .checkout-card .card-header .phase {
+  text-align: left;
+}
+
+.checkout-container .checkout-card .card-header .price {
+  text-align: right;
+}
+
+.progress-bar {
+  background-color: #C2C2C2;
+  width: 100%;
+  border-radius: 20px;
+  height: 0.25rem;
+}
+
+.progress {
+  background-color: #FF4444;
+  color: white;
+  text-align: right;
+  border-radius: 20px;
+  height: 0.25rem;
+  animation: glow 1s infinite alternate;
+}
+
+@keyframes glow {
+  from {
+    box-shadow: 0px 0px 0px 0px rgba(255, 56, 74, 0.50);
+  }
+
+  to {
+    box-shadow: 0px 0px 10px 0px rgba(255, 56, 74, 1);
+  }
+}
+
+.card-footer {
+  margin-top: 1.59rem;
+}
+
+.card-footer a {
+  display: flex;
+  padding: 1rem 4.5625rem;
+  justify-content: center;
+  align-items: center;
+  gap: 0.625rem;
+  border-radius: 3.125rem;
+  background: #FF4444;
+  box-shadow: 0px 4px 20px 0px rgba(255, 56, 74, 0.50);
+  color: #fff;
+  font-family: Satoshi-Bold;
+  font-size: 1.125rem;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 1.875rem;
+  letter-spacing: -0.01125rem;
+  transition: ease-in-out .3s;
+}
+
+/* .card-footer a:hover {
+  color: #ff4444;
+  background-color: #fff;
+} */
+
+.checkout-container .checkout-card.unlocked:hover .card-footer a {
+  color: #ff4444;
+  background-color: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.5);
+}
+
+/* xl */
+@media (max-width: 1280px) {
+  .container {
+    max-width: 1100px;
+  }
+}
+
+/* lg */
+@media (max-width: 1100px) {
+  .container {
+    max-width: 950px;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+    border-radius: 3rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image .main-img {
+    border-radius: 3rem;
+  }
+
+
+  .card-footer {
+    margin-top: 1.3rem;
+  }
+
+  .card-footer a {
+    padding: 1rem 3.5625rem;
+    font-size: .9rem;
+    line-height: 1rem;
+  }
+
+  .checkout-container {
+    gap: 1.5rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents {
+    gap: 0.9rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase h3,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price h4 {
+    font-size: 2rem;
+    line-height: 2.5rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase p,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price p {
+    font-size: 1rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info p {
+    font-size: .9rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .progress-info .card-phase-info p {
+    font-size: .9rem;
+  }
+
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase h3,
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price h4 {
+    font-size: 1.5rem;
+    line-height: 2.5rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase p,
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price p {
+    font-size: 1rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents {
+    gap: .9rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image .card-locked-overlay {
+    height: 6rem;
+    width: 6rem;
+  }
+}
+
+/* md */
+@media (max-width: 920px) {
+  .container {
+    max-width: 800px;
+  }
+
+  .card-footer a {
+    padding: .8rem 2.5625rem;
+    font-size: .7rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents {
+    gap: .5rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase h3,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price h4 {
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase p,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price p {
+    font-size: .8rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info p {
+    font-size: .8rem;
+  }
+
+  .card-footer {
+    margin-top: 1.2rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents {
+    gap: .5rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase h3,
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price h4 {
+    font-size: 1.8rem;
+    line-height: 1.5rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase p,
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price p {
+    font-size: .8rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .progress-info .card-phase-info p {
+    font-size: .8rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+    border-radius: 2.8rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image .main-img {
+    border-radius: 2.8rem;
+  }
+
+}
+
+@media (max-width: 768px) {
+  .container {
+    max-width: 640px;
+  }
+
+  .checkout-section .checkout-title {
+    display: none;
+  }
+
+  .checkout-container .checkout-card.unlocked {
+    padding: 1.25rem 1rem 1.31rem 1rem;
+  }
+
+  .card-footer {
+    display: none;
+  }
+
+  .checkout-section {
+    gap: 1.5rem;
+    margin-bottom: 5.5rem;
+  }
+
+  .checkout-container {
+    display: grid;
+    align-items: center;
+
+    grid-template-columns: 1fr;
+    gap: .5rem;
+  }
+
+  .checkout-section .checkout-title h2 {
+    font-size: 0.875rem;
+  }
+
+  .checkout-card:hover {
+    transform: scale(1);
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+    width: 23.875rem;
+    height: 21.9375rem;
+    border-radius: 3.5625rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile,
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-image .card-locked-overlay {
+    display: block;
+  }
+
+  .checkout-container .gradient-mobile-texts {
+    display: block;
+    text-align: center;
+    background: linear-gradient(91deg, #FFF 17.17%, #FFA1A1 53.96%, #F44 106.92%, #FD9C9C 106.93%);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+
+    font-size: 0.75rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 97%;
+    /* 0.7275rem */
+    letter-spacing: 0.075rem;
+    text-transform: uppercase;
+
+    margin-top: .8rem;
+  }
+
+  .checkout-container .checkout-card.unlocked {
+    padding: 2rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents {
+    gap: .75rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase h3,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price h4 {
+    font-size: 2rem;
+    line-height: 97%;
+    letter-spacing: -0.06rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase p,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price p {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    letter-spacing: -0.01125rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info p {
+    font-size: 1rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.01rem;
+  }
+
+  .checkout-container .checkout-card.locked {
+    padding: 0.75rem 1.2rem;
+    background-color: #171717;
+    border-radius: 24px;
+  }
+
+  .checkout-container .mobile-book-button {
+    display: block;
+    margin-top: .5rem;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    padding: 3% 5% 3% 5%;
+    background-color: #000;
+  }
+
+  .checkout-container .mobile-book-button a {
+    display: flex;
+    padding: 1rem 2rem;
+    justify-content: center;
+    align-items: center;
+    gap: 0.625rem;
+
+    border-radius: 3.125rem;
+    background: #FF4444;
+    box-shadow: 0px 4px 20px 0px rgba(255, 56, 74, 0.50);
+
+    color: #FFF;
+    font-size: 0.9375rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: 0.02813rem;
+
+
+    /* animation: wiggle 2s linear infinite; */
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header {
+    order: 3;
+  }
+
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .progress-info .card-phase-info-mobile {
+    display: flex;
+    flex-direction: column;
+    /* gap: .5rem; */
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-phase-info-mobile .phase p {
+    color: #FF9393;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+    letter-spacing: -0.02625rem;
+    opacity: .5;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-phase-info-mobile .phase-info-large p {
+    color: #3D3D3D;
+    font-size: 1.75rem;
+    font-weight: 700;
+    line-height: .9;
+    letter-spacing: -0.0525rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-phase-info-mobile .phase-info p {
+    color: #3D3D3D;
+    font-size: 1rem;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.02625rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info {
+    order: 1;
+    display: flex;
+    align-items: center;
+    gap: .75rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .progress-info {
+    order: 2;
+    display: none;
+  }
+
+  .checkout-container .checkout-card.locked .progress-bar {
+    display: none;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image .card-locked-overlay {
+    height: 3.0625rem;
+    width: 3.0625rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+    border-radius: 2rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image .main-img {
+    width: 4.5rem;
+    height: 4rem;
+    border-radius: .75rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .phase {
+    display: none;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price h4 {
+    font-size: 2.3rem;
+    line-height: 1;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price p {
+    font-family: Satoshi-Medium;
+    font-size: 1.2rem;
+    color: #3D3D3D;
+    opacity: 1;
+    font-weight: 500;
+    line-height: 1.5rem;
+    letter-spacing: -0.02rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header {
+    margin: 0;
+  }
+
+  .checkout-container .gradient-mobile-texts {
+    font-size: 1rem;
+  }
+
+}
+
+/* sm */
+@media (max-width: 640px) {
+  .container {
+    max-width: 475px;
+  }
+}
+
+/* xs */
+@media (max-width: 475px) {
+  .container {
+    width: 95%;
+  }
+
+  .checkout-section {
+    gap: .75rem;
+    margin-top: 1rem;
+  }
+
+  .checkout-section .checkout-title h4 {
+    font-size: 1.125rem;
+    line-height: 1.875rem;
+    letter-spacing: -0.01125rem;
+  }
+
+  .checkout-container .checkout-card.unlocked {
+    padding: 1rem 1.12rem 1rem 1.12rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price h4 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price p {
+    font-size: 1rem;
+  }
+
+  .checkout-container .checkout-card .checkout-card-contents .card-header,
+  .checkout-container .checkout-card .checkout-card-contents .progress-info {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info p {
+    font-size: 1rem;
+  }
+
+  .checkout-container .gradient-mobile-texts {
+    font-size: 0.875rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-phase-info-mobile .phase-info-large p {
+    line-height: .75;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase h3 {
+    font-size: 1.75rem;
+    letter-spacing: -0.04875rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price h4 {
+    font-size: 1.75rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase p,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price p {
+    font-size: 1rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+    width: 22rem;
+    height: 19rem;
+    object-fit: cover;
+    border-radius: 2rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile .phase {
+    margin-bottom: .2rem;
+  }
+
+  .checkout-container .mobile-book-button a {
+    display: flex;
+    padding: 1rem 2rem;
+  }
+}
+
+/* xs */
+@media (max-width: 390px) {
+  .container {
+    width: 95%;
+  }
+
+  .checkout-container .checkout-card.unlocked {
+    padding: 1rem 1.12rem 1rem 1.12rem;
+  }
+
+  .checkout-container .checkout-card .checkout-card-contents .card-header,
+  .checkout-container .checkout-card .checkout-card-contents .progress-info {
+    margin-left: 0rem;
+    margin-right: 0rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .progress-info .card-phase-info p {
+    font-size: 0.875rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-phase-info-mobile .phase-info-large p {
+    line-height: .75;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase h3 {
+    font-size: 1.7rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price h4 {
+    font-size: 2rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase {
+    gap: .25rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .phase p,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-header .price p {
+    font-size: 1.25rem;
+  }
+
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-phase-info-mobile .phase p {
+    font-size: 0.875rem;
+    line-height: .8;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-phase-info-mobile .phase-info p {
+    font-size: 0.875rem;
+    line-height: 1;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price h4 {
+    font-size: 2rem;
+    line-height: 1;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-header .price p {
+    font-size: 1rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile,
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-image .card-locked-overlay {
+    display: flex;
+    flex-direction: column;
+    gap: .25rem;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+    width: 20.31506rem;
+    height: 16rem;
+    border-radius: 2rem;
+  }
+
+  .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile .phase {
+    margin-bottom: .2rem;
+  }
+
+  .checkout-container .mobile-book-button a {
+    display: flex;
+    padding: 1rem 1rem;
+  }
+
+}
+
+/* animation: wiggle 2s linear infinite; */
+@keyframes wiggle {
+
+  0%,
+  7% {
+    transform: rotateZ(0);
+  }
+
+  15% {
+    transform: rotateZ(-2deg);
+  }
+
+  20% {
+    transform: rotateZ(3deg);
+  }
+
+  25% {
+    transform: rotateZ(-3deg);
+  }
+
+  30% {
+    transform: rotateZ(3deg);
+  }
+
+  35% {
+    transform: rotateZ(-2deg);
+  }
+
+  40%,
+  100% {
+    transform: rotateZ(0);
+  }
+}
