@@ -11,7 +11,7 @@ function App() {
         <div className="checkout-title">
           <h4>3333 Magickeys</h4>
         </div>
-        <div className="checkout-container container">
+        <div className="checkout-container pricing-container">
           <div className="checkout-card unlocked">
             <div className="checkout-card-contents">
               <div className="card-header">
@@ -181,7 +181,7 @@ function App() {
               <a href="/#">Be part of history</a>
             </div>
           </div>
-          <div className="mobile-book-button container">
+          <div className="mobile-book-button pricing-container">
             <a href="/#">Be part of history</a>
           </div>
         </div>
