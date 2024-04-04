@@ -270,10 +270,13 @@ img {
 .checkout-container .checkout-card.locked .checkout-card-contents .card-image .main-img {
   opacity: .5;
   border-radius: 3.5625rem;
+  width: 19.75rem;
+  height: 19.375rem;
 }
 
 .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
-  width: 23.875rem;
+  width: 19.75rem;
+  height: 19.375rem;
   border-radius: 3.5625rem;
 }
 
@@ -455,12 +458,15 @@ img {
 
   .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
     border-radius: 3rem;
+    width: 19.75rem;
+    height: 16.375rem;
   }
 
   .checkout-container .checkout-card.locked .checkout-card-contents .card-image .main-img {
     border-radius: 3rem;
+    width: 19.75rem;
+    height: 16.375rem;
   }
-
 
   .card-footer {
     margin-top: 1.3rem;
@@ -576,10 +582,12 @@ img {
 
   .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
     border-radius: 2.8rem;
+    height: 13.375rem;
   }
 
   .checkout-container .checkout-card.locked .checkout-card-contents .card-image .main-img {
     border-radius: 2.8rem;
+    height: 13.375rem;
   }
 
 }
