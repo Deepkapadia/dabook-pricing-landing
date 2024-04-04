@@ -102,7 +102,7 @@ img {
 }
 
 .checkout-section {
-  margin-top: 2rem;
+  margin-top: 2.88rem;
   margin-bottom: 1rem;
   display: flex;
   flex-direction: column;
@@ -589,6 +589,10 @@ img {
     max-width: 640px;
   }
 
+  .checkout-section {
+    margin-top: .5rem;
+  }
+
   .checkout-section .checkout-title {
     display: none;
   }
@@ -649,7 +653,7 @@ img {
     letter-spacing: 0.075rem;
     text-transform: uppercase;
 
-    margin-top: .8rem;
+    margin-top: .5rem;
   }
 
   .checkout-container .checkout-card.unlocked {
@@ -843,7 +847,7 @@ img {
 
   .checkout-section {
     gap: .75rem;
-    margin-top: 1rem;
+    margin-top: .5rem;
   }
 
   .checkout-section .checkout-title h4 {
@@ -908,6 +912,8 @@ img {
     height: 19rem;
     object-fit: cover;
     border-radius: 2rem;
+
+    object-position: 100% 40%;
   }
 
   .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile .phase {
