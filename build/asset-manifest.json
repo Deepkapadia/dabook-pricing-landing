@@ -1,22 +1,20 @@
 {
   "files": {
-    "main.css": "/static/css/main.d18dd6c6.css",
-    "main.js": "/static/js/main.5a317f7e.js",
+    "main.css": "/static/css/main.2d121e86.css",
+    "main.js": "/static/js/main.b792cc0d.js",
     "static/js/453.e8a9cd95.chunk.js": "/static/js/453.e8a9cd95.chunk.js",
-    "static/media/giflownoise.gif": "/static/media/giflownoise.432b3ee69c638200bd55.gif",
-    "static/media/latest-image-full.png": "/static/media/latest-image-full.260a63e8eabd90c83a7f.png",
+    "static/media/finalgif.gif": "/static/media/finalgif.e9d73bb31d67fd5ea56a.gif",
     "static/media/Satoshi-Medium.ttf": "/static/media/Satoshi-Medium.759562088ba19068aef8.ttf",
     "static/media/Satoshi-Regular.ttf": "/static/media/Satoshi-Regular.fe762acc7e97cb612805.ttf",
     "static/media/Satoshi-Bold.ttf": "/static/media/Satoshi-Bold.137a52d9f47dd71c6247.ttf",
     "static/media/lock-overlay.png": "/static/media/lock-overlay.35a350aab508989db890.png",
-    "static/media/logo.svg": "/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
     "index.html": "/index.html",
-    "main.d18dd6c6.css.map": "/static/css/main.d18dd6c6.css.map",
-    "main.5a317f7e.js.map": "/static/js/main.5a317f7e.js.map",
+    "main.2d121e86.css.map": "/static/css/main.2d121e86.css.map",
+    "main.b792cc0d.js.map": "/static/js/main.b792cc0d.js.map",
     "453.e8a9cd95.chunk.js.map": "/static/js/453.e8a9cd95.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.d18dd6c6.css",
-    "static/js/main.5a317f7e.js"
+    "static/css/main.2d121e86.css",
+    "static/js/main.b792cc0d.js"
   ]
 }

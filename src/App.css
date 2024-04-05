@@ -924,6 +924,18 @@ img {
     height: 19rem;
     object-fit: cover;
     border-radius: 2rem;
+
+    object-position: 50% 50%;
+    transform: scale(1.20);
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image {
+    overflow: hidden;
+  }
+
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image,
+  .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
+    border-radius: 2rem;
   }
 
   .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile .phase {
