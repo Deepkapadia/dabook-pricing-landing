@@ -272,12 +272,14 @@ img {
   border-radius: 3.5625rem;
   width: 19.75rem;
   height: 19.375rem;
+  object-fit: cover;
 }
 
 .checkout-container .checkout-card.unlocked .checkout-card-contents .card-image .main-img {
   width: 19.75rem;
   height: 19.375rem;
   border-radius: 3.5625rem;
+  object-fit: cover;
 }
 
 .checkout-container .checkout-card.locked .checkout-card-contents .card-image {
@@ -432,16 +434,18 @@ img {
   transition: ease-in-out .3s;
 }
 
-/* .card-footer a:hover {
-  color: #ff4444;
-  background-color: #fff;
-} */
-
-.checkout-container .checkout-card.unlocked:hover .card-footer a {
+.card-footer a:hover {
   color: #ff4444;
   background-color: #fff;
   box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.5);
 }
+
+/* 
+.checkout-container .checkout-card.unlocked:hover .card-footer a {
+  color: #ff4444;
+  background-color: #fff;
+  box-shadow: 0px 4px 20px 0px rgba(255, 255, 255, 0.5);
+} */
 
 /* xl */
 @media (max-width: 1280px) {
@@ -920,8 +924,6 @@ img {
     height: 19rem;
     object-fit: cover;
     border-radius: 2rem;
-
-    object-position: 100% 40%;
   }
 
   .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile .phase {
