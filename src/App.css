@@ -938,7 +938,6 @@ img {
     border-radius: 2rem;
 
     object-position: 50% 50%;
-    transform: scale(1.25);
   }
 
   .checkout-container .checkout-card.locked .checkout-card-contents .card-image-with-mobile-info .card-phase-info-mobile .phase {
