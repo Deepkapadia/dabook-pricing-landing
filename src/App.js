@@ -1,6 +1,4 @@
-import logo from "./logo.svg";
 import "./App.css";
-import LatestImage from "./assets/images/latest-image-full.png";
 import LatestImageGIF from "./assets/images/finalgif.gif";
 import LockOverlay from "./assets/images/lock-overlay.png";
 
