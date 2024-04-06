@@ -24,11 +24,14 @@ function App() {
               </div>
               <div className="card-image-with-mobile-info">
                 <div className="card-image">
-                  <img
-                    className="main-img"
-                    src={LatestImageGIF}
-                    alt={LatestImageGIF}
-                  />
+                  <a href="">
+                    <img
+                      className="main-img"
+                      src={LatestImageGIF}
+                      alt={LatestImageGIF}
+                    />
+                  </a>
+
                   <img
                     className="card-locked-overlay"
                     src={LockOverlay}
