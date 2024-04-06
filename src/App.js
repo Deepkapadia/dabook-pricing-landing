@@ -24,13 +24,13 @@ function App() {
               </div>
               <div className="card-image-with-mobile-info">
                 <div className="card-image">
-                  <a href="">
+                  <button>
                     <img
                       className="main-img"
                       src={LatestImageGIF}
                       alt={LatestImageGIF}
                     />
-                  </a>
+                  </button>
 
                   <img
                     className="card-locked-overlay"
@@ -66,7 +66,7 @@ function App() {
               </div>
             </div>
             <div className="card-footer">
-              <a href="/#">Be part of history</a>
+              <a href="/#">Buy Magickey</a>
             </div>
           </div>
           <p className="gradient-mobile-texts">NEXT PHASES LIMITED PRICES</p>
@@ -123,7 +123,7 @@ function App() {
               </div>
             </div>
             <div className="card-footer">
-              <a href="/#">Be part of history</a>
+              <a href="/#">Buy Magickey</a>
             </div>
           </div>
           <div className="checkout-card locked">
@@ -179,11 +179,11 @@ function App() {
               </div>
             </div>
             <div className="card-footer">
-              <a href="/#">Be part of history</a>
+              <a href="/#">Buy Magickey</a>
             </div>
           </div>
           <div className="mobile-book-button pricing-container">
-            <a href="/#">Be part of history</a>
+            <a href="/#">Buy Magickey</a>
           </div>
         </div>
       </section>
